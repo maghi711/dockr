@@ -1,0 +1,10 @@
+### This is to compile a java file and execute it when you run the container
+FROM openjdk:8u212-jdk
+LABEL Mahesh J maghii@gmail.com
+RUN export PATH=$PATH:$JAVA_HOME
+RUN mkdir /home/hello
+COPY Hello.java /home/hello
+WORKDIR /home/hello 
+RUN javac Hello.java
+CMD ["java", "Hello"]
+
